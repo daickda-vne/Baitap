@@ -1,40 +1,10 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<script>
-(function() {
-  try {
-    var _origFetch = window.fetch;
-    Object.defineProperty(window, "fetch", {
-      get: function() { return _origFetch; },
-      set: function(fn) { _origFetch = fn; },
-      configurable: true,
-      enumerable: true
-    });
-    if (typeof Window !== "undefined" && Window.prototype) {
-      try {
-        Object.defineProperty(Window.prototype, "fetch", {
-          get: function() { return _origFetch; },
-          set: function(fn) { _origFetch = fn; },
-          configurable: true,
-          enumerable: true
-        });
-      } catch (_) {}
-    }
-  } catch (_) {}
-  window.addEventListener("error", function(e) {
-    if (e && e.message && e.message.indexOf("Cannot set property fetch of #<Window>") !== -1) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      return true;
-    }
-  }, true);
-})();
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bài 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm | Portfolio Nguyễn Hưng Nam</title>
-<meta name="description" content="Portfolio học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo">
+<meta name="description" content="Kế hoạch, tổ chức họp trực tuyến, phân công nhiệm vụ và đánh giá hiệu quả làm việc nhóm qua Google Meet.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,45 +12,136 @@
   <div class="wrap bar">
     <a class="brand" href="index.html">Portfolio <span>Nguyễn Hưng Nam</span></a>
     <button class="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
-    <nav><ul class="menu"><li><a href="index.html">Giới thiệu</a></li><li class="has-sub"><a href="projects.html" class="active">Dự án ▾</a><ul class="sub"><li><a href="bai1.html">Bài 1: Thao tác cơ bản với tệp tin và thư mục</a></li><li><a href="bai2.html">Bài 2: Tìm kiếm và đánh giá thông tin học thuật</a></li><li><a href="bai3.html">Bài 3: Viết Prompt hiệu quả cho các tác vụ học tập</a></li><li><a href="bai4.html">Bài 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</a></li><li><a href="bai5.html">Bài 5: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</a></li><li><a href="bai6.html">Bài 6: Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</a></li></ul></li><li><a href="conclusion.html">Tổng kết</a></li></ul></nav>
+    <nav><ul class="menu">
+      <li><a href="index.html">Giới thiệu</a></li>
+      <li class="has-sub"><a href="projects.html" class="active">Dự án ▾</a><ul class="sub">
+        <li><a href="bai1.html">Bài 1: Thao tác cơ bản với tệp tin và thư mục</a></li>
+        <li><a href="bai2.html">Bài 2: Tìm kiếm và đánh giá thông tin học thuật</a></li>
+        <li><a href="bai3.html">Bài 3: Viết Prompt hiệu quả cho các tác vụ học tập</a></li>
+        <li><a href="bai4.html" aria-current="page">Bài 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</a></li>
+        <li><a href="bai5.html">Bài 5: Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</a></li>
+        <li><a href="bai6.html">Bài 6: Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</a></li>
+      </ul></li>
+      <li><a href="conclusion.html">Tổng kết</a></li>
+    </ul></nav>
   </div>
 </header>
-<main class="wrap">
 
-<p class="eyebrow">Bài 4 · Chương 4: Giao tiếp và hợp tác trong môi trường số · Điểm tối đa 0,5</p>
-<h1>Bài 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h1>
-<nav class="pager top-pager"><a class="btn ghost" href="projects.html">← Quay lại Dự án</a><a class="btn" href="bai5.html">Bài tiếp theo →</a></nav>
+<main class="wrap page-bai4">
+  <p class="eyebrow">Bài 4 · Chương 4: Giao tiếp và hợp tác trong môi trường số · Điểm tối đa 0,5</p>
+  <h1>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h1>
+  <p class="lead">Tổ chức cuộc họp trực tuyến để cùng trao đổi, nghiên cứu và hoàn thiện chủ đề “Hòa thanh 4 bè cơ bản và ứng dụng trong đệm hát”.</p>
+  <nav class="pager top-pager" aria-label="Điều hướng bài tập"><a class="btn ghost" href="projects.html">← Danh mục dự án</a><a class="btn" href="bai5.html">Bài tiếp theo →</a></nav>
 
-<section class="card">
-  <h2>a) Mục tiêu bài tập</h2>
-  <p>Yêu cầu của bài tập: cùng nhóm chọn một chủ đề học thuật hoặc dự án; lên kế hoạch cuộc họp trực tuyến (chọn nền tảng, xác định mục tiêu và chương trình nghị sự, phân công vai trò, chuẩn bị tài liệu); tổ chức họp 20–30 phút và ghi lại khi có sự đồng ý của mọi thành viên; lập biên bản, tổng hợp quyết định và nhiệm vụ, chia sẻ kết quả; mỗi thành viên viết đánh giá ngắn.</p><p>Kỹ năng được rèn luyện: tổ chức và tham gia họp trực tuyến chuyên nghiệp, phân công trách nhiệm, ghi biên bản, quản lý công việc nhóm bằng công cụ trực tuyến (kết hợp Trello theo gợi ý của đề).</p>
-</section>
+  <section class="card">
+    <p class="section-kicker">01 / Mục tiêu</p>
+    <h2>Chủ đề và mục tiêu làm việc nhóm</h2>
+    <p>Nhóm lựa chọn chủ đề <strong>“Hòa thanh 4 bè cơ bản và ứng dụng trong đệm hát”</strong> vì đây là nội dung gắn với chuyên ngành Sư phạm Âm nhạc, có tính ứng dụng trong thực hành và tạo cơ hội để các thành viên trao đổi, bổ sung kiến thức cho nhau.</p>
+    <div class="highlight-grid">
+      <div><strong>Củng cố kiến thức</strong><span>Nhận biết cấu trúc SATB gồm Soprano, Alto, Tenor và Bass; các nguyên tắc phối hợp bè.</span></div>
+      <div><strong>Trao đổi chuyên môn</strong><span>Phân tích lỗi thường gặp, cách nối hợp âm và ứng dụng hòa thanh trong đệm hát.</span></div>
+      <div><strong>Rèn kỹ năng số</strong><span>Thực hành giao tiếp, phân công, phối hợp và quản lý công việc qua cuộc họp trực tuyến.</span></div>
+    </div>
+  </section>
 
-<section class="card">
-  <h2>b) Tóm tắt quá trình thực hiện</h2>
-  <h3>Các bước thực hiện</h3>
-  <ol><li>Nhóm thống nhất chủ đề dự án: thiết kế poster tuyên truyền "Sử dụng AI có trách nhiệm trong học tập" (có thể thay bằng chủ đề nhóm đã chọn).</li><li>Chọn Google Meet vì miễn phí, chạy trên trình duyệt và dễ chia sẻ liên kết; dùng Trello để theo dõi nhiệm vụ.</li><li>Xây dựng chương trình nghị sự 25 phút và phân công vai trò: điều phối, thư ký, người trình bày.</li><li>Chuẩn bị tài liệu: bản phác thảo ý tưởng poster, bảng nhiệm vụ trên Trello, mẫu biên bản.</li><li>Tổ chức họp, xin ý kiến đồng ý trước khi ghi hình, thảo luận và chốt quyết định.</li><li>Sau họp: lập biên bản, cập nhật Trello, gửi tài liệu cho các thành viên; mỗi người viết đánh giá ngắn.</li></ol>
-  <h3>Công cụ đã sử dụng</h3>
-  <ul><li>Google Meet (nền tảng họp)</li><li>Trello (quản lý nhiệm vụ nhóm)</li><li>Google Docs hoặc Google Drive (biên bản và tài liệu dùng chung)</li><li>Claude (Anthropic): hỗ trợ soạn khung kế hoạch và biên bản</li></ul>
-  <h3>Khó khăn và cách giải quyết</h3>
-  <div class="tablewrap"><table><thead><tr><th>Khó khăn</th><th>Cách giải quyết</th></tr></thead><tbody><tr><td>Khó thống nhất giờ họp vì lịch học khác nhau.</td><td>Dùng bình chọn trong nhóm chat và chọn khung giờ nhiều người rảnh nhất.</td></tr><tr><td>Cuộc họp dễ kéo dài lan man.</td><td>Điều phối viên giữ giờ theo từng mục, vấn đề chưa xong chuyển sang Trello thảo luận tiếp.</td></tr><tr><td>Quyết định không được ghi lại nên dễ quên.</td><td>Thư ký ghi trực tiếp vào biên bản chung và đăng nhiệm vụ lên Trello ngay sau họp.</td></tr></tbody></table></div>
-  <p class="note"><strong>Khai báo sử dụng AI:</strong> Mình dùng Claude (Anthropic) để gợi ý khung kế hoạch và biên bản cuộc họp. Nội dung cuộc họp, các quyết định, phân công và phần đánh giá do nhóm và mình tự thực hiện.</p>
-</section>
+  <section class="card">
+    <p class="section-kicker">02 / Kế hoạch</p>
+    <h2>Tổ chức cuộc họp trực tuyến</h2>
+    <div class="stats">
+      <div><span>Hình thức</span><strong>Google Meet</strong></div>
+      <div><span>Thời lượng dự kiến</span><strong>25 phút</strong></div>
+      <div><span>Thành viên</span><strong>05 người</strong></div>
+      <div><span>Điều phối</span><strong>Phạm Thị Bảo Ngọc</strong></div>
+    </div>
+    <h3>Phân công vai trò và nhiệm vụ</h3>
+    <div class="tablewrap"><table><thead><tr><th>Thành viên</th><th>Vai trò</th><th>Nhiệm vụ chính</th></tr></thead><tbody>
+      <tr><td>Phạm Thị Bảo Ngọc</td><td>Nhóm trưởng, điều phối</td><td>Lập kế hoạch, điều hành cuộc họp, quản lý tiến độ và hoàn thiện báo cáo.</td></tr>
+      <tr><td>A King Thị Hiểu Ly</td><td>Thư ký</td><td>Ghi biên bản, tổng hợp quyết định, lưu trữ và chia sẻ tài liệu.</td></tr>
+      <tr><td>Đinh Quỳnh Mai</td><td>Phụ trách tài liệu</td><td>Tìm kiếm, tổng hợp kiến thức về khái niệm và cấu tạo hòa thanh 4 bè.</td></tr>
+      <tr><td>Vũ Nhật Long</td><td>Phụ trách thảo luận</td><td>Chuẩn bị nguyên tắc phối bè, ví dụ minh họa và câu hỏi thảo luận.</td></tr>
+      <tr><td>Nguyễn Hưng Nam</td><td>Phụ trách đánh giá</td><td>Tổng hợp đánh giá, đề xuất cải thiện và bài học kinh nghiệm.</td></tr>
+    </tbody></table></div>
+    <h3>Chương trình nghị sự 25 phút</h3>
+    <div class="tablewrap"><table><thead><tr><th>Thời lượng</th><th>Nội dung</th></tr></thead><tbody>
+      <tr><td>3 phút</td><td>Ổn định, kiểm tra kết nối và giới thiệu mục tiêu.</td></tr>
+      <tr><td>4 phút</td><td>Trao đổi khái niệm và cấu tạo hòa thanh 4 bè.</td></tr>
+      <tr><td>5 phút</td><td>Thảo luận các nguyên tắc cơ bản khi viết hòa thanh 4 bè.</td></tr>
+      <tr><td>5 phút</td><td>Phân tích ví dụ và khả năng ứng dụng trong đệm hát.</td></tr>
+      <tr><td>5 phút</td><td>Đóng góp ý kiến và thống nhất nội dung.</td></tr>
+      <tr><td>3 phút</td><td>Tổng kết kết quả và giao nhiệm vụ tiếp theo.</td></tr>
+    </tbody></table></div>
+    <h3>Chuẩn bị trước cuộc họp</h3>
+    <ul class="clean-list">
+      <li><strong>Tài liệu:</strong> khái niệm và cấu tạo SATB; vai trò từng bè; nguyên tắc phối bè; ví dụ hợp âm, chuyển hợp âm và câu hỏi thảo luận.</li>
+      <li><strong>Thiết bị:</strong> máy tính hoặc điện thoại có Internet, micro, camera và Google Meet.</li>
+      <li><strong>Phối hợp:</strong> thống nhất thời gian, gửi đường link và tài liệu trước; kiểm tra âm thanh, kết nối; chỉ ghi hình khi tất cả thành viên đồng ý.</li>
+    </ul>
+  </section>
 
-<section class="card">
-  <h2>c) Sản phẩm cuối cùng</h2>
-  <h3>a) Kế hoạch cuộc họp</h3><div class="tablewrap"><table><caption>Thông tin kế hoạch cuộc họp trực tuyến</caption><thead><tr><th>Nội dung</th><th>Chi tiết</th></tr></thead><tbody><tr><td>Nền tảng</td><td>Google Meet; liên kết cuộc họp: https://meet.google.com/meet/wcc-guyx-ktj?pli=1</td></tr><tr><td>Thời gian</td><td>22h25 ngày 29/11/2026, thời lượng 25 phút</td></tr><tr><td>Thành viên</td><td>Nguyễn Hưng Nam, Nguyễn Văn A</td></tr><tr><td>Mục tiêu</td><td>Chốt ý tưởng, bố cục và phân công thực hiện poster "Sử dụng AI có trách nhiệm trong học tập"</td></tr><tr><td>Phân công vai trò</td><td>Điều phối: Nguyễn Hưng Nam; Thư ký: Nguyễn Văn A; Người trình bày: Nguyễn Hưng Nam</td></tr><tr><td>Tài liệu chuẩn bị</td><td>Phác thảo ý tưởng, bảng nhiệm vụ Trello, mẫu biên bản, bộ nguyên tắc dùng AI (từ Bài 6)</td></tr></tbody></table></div><div class="tablewrap"><table><caption>Chương trình nghị sự</caption><thead><tr><th>Thời gian</th><th>Nội dung</th><th>Phụ trách</th></tr></thead><tbody><tr><td>0–3 phút</td><td>Khai mạc, nhắc mục tiêu, xin ý kiến ghi hình</td><td>Điều phối</td></tr><tr><td>3–8 phút</td><td>Báo cáo tiến độ chuẩn bị của từng người</td><td>Từng thành viên</td></tr><tr><td>8–18 phút</td><td>Thảo luận ý tưởng, bố cục, thông điệp poster</td><td>Cả nhóm</td></tr><tr><td>18–23 phút</td><td>Phân công nhiệm vụ và hạn hoàn thành</td><td>Điều phối, thư ký</td></tr><tr><td>23–25 phút</td><td>Tổng kết, nhắc lại quyết định, hẹn buổi sau</td><td>Người trình bày</td></tr></tbody></table></div><figure><img src="assets/b4_anh1.png" alt="Ảnh chụp màn hình cuộc họp nhóm trên Google Meet"><figcaption>Ảnh chụp màn hình cuộc họp nhóm trên Google Meet</figcaption></figure><h3>b) Biên bản cuộc họp</h3><div class="tablewrap"><table><caption>Biên bản cuộc họp nhóm</caption><thead><tr><th>Mục</th><th>Nội dung</th></tr></thead><tbody><tr><td>Thời gian, địa điểm</td><td>22h25 đến 22h50 ngày 29/11/2026; họp trực tuyến trên Google Meet</td></tr><tr><td>Thành phần tham dự</td><td>Nguyễn Hưng Nam, Nguyễn Văn A. Có mặt đủ 2/2 thành viên, không có ai vắng.</td></tr><tr><td>Nội dung thảo luận</td><td>Thống nhất thông điệp chính; thảo luận hai phương án bố cục; rà soát quy định ghi rõ việc dùng AI</td></tr><tr><td>Quyết định</td><td>Chọn bố cục dọc, dùng bảng màu ấm thống nhất; thông điệp chính là "Dùng AI để hỗ trợ, không để thay thế"; thống nhất phân công và hạn hoàn thành từng việc; ghi rõ công cụ AI đã dùng trên sản phẩm.</td></tr></tbody></table></div><div class="tablewrap"><table><caption>Nhiệm vụ tiếp theo</caption><thead><tr><th>Nhiệm vụ</th><th>Người phụ trách</th><th>Hạn hoàn thành</th></tr></thead><tbody><tr><td>Tìm tư liệu và số liệu cho poster</td><td>Nguyễn Văn A</td><td>9h00 ngày 30/11/2026</td></tr><tr><td>Soạn nội dung chữ</td><td>Nguyễn Hưng Nam</td><td>10h00 ngày 30/11/2026</td></tr><tr><td>Thiết kế bản nháp poster</td><td>Nguyễn Hưng Nam</td><td>9h00 ngày 01/12/2026</td></tr><tr><td>Rà soát nguồn ảnh, ghi chú việc dùng AI</td><td>Nguyễn Văn A</td><td>10h00 ngày 01/12/2026</td></tr></tbody></table></div><figure><img src="assets/b4_anh2.png" alt="Bảng Trello theo dõi nhiệm vụ của nhóm"><figcaption>Bảng Trello theo dõi nhiệm vụ của nhóm</figcaption></figure><p>Biên bản và tài liệu được chia sẻ giữa hai thành viên qua Google Drive, nội dung đầy đủ của biên bản nằm ngay trong trang này.</p><h3>c) Cách thức phối hợp trực tuyến</h3><ul><li><strong>Kênh trao đổi nhanh:</strong> nhóm chat; <strong>họp chính thức:</strong> Google Meet.</li><li><strong>Theo dõi việc:</strong> Trello với 3 cột Cần làm, Đang làm, Hoàn thành.</li><li><strong>Tài liệu chung:</strong> Google Drive, đặt tên tệp theo quy tắc ở Bài 1.</li><li><strong>Quy tắc họp:</strong> vào đúng giờ, tắt micro khi không nói, chỉ ghi hình khi mọi người đồng ý.</li></ul><h3>d) Đánh giá cá nhân về hiệu quả cuộc họp</h3><p>Cuộc họp diễn ra đúng kế hoạch và hoàn thành tốt mục tiêu đã đề ra: cả hai thành viên đều có mặt, thảo luận tập trung và chốt được ý tưởng, bố cục cho poster. Nội dung công việc được phân chia đầy đủ, rõ người, rõ hạn nên không bị chồng chéo. Mình làm điều phối nên giữ giờ theo từng mục, nhờ vậy cuộc họp không bị kéo dài. Điều làm tốt là Nguyễn Văn A ghi biên bản kịp thời, các quyết định được cập nhật ngay lên Trello. Điều chưa tốt là lúc đầu nhóm mất vài phút chỉnh âm thanh và kết nối nên hơi hụt thời gian. Mình đề xuất lần sau thử thiết bị trước giờ họp 5 phút và gửi trước nội dung cần thảo luận để họp nhanh hơn.</p>
-  
-</section>
+  <section class="card">
+    <p class="section-kicker">03 / Biên bản</p>
+    <h2>Diễn biến và kết quả cuộc họp</h2>
+    <div class="meeting-meta"><span><strong>Thời gian ghi nhận:</strong> 09/11/2026, 21:37</span><span><strong>Nền tảng:</strong> Google Meet</span><span><strong>Tham gia:</strong> 05/05 thành viên</span></div>
+    <p>Cuộc họp tập trung vào cấu trúc hòa thanh 4 bè, nguyên tắc phối hợp các bè, cách kết nối hợp âm và khả năng vận dụng vào thực hành đệm hát. A King Thị Hiểu Ly tổ chức phòng họp và ghi biên bản; Phạm Thị Bảo Ngọc điều phối nội dung theo phân công.</p>
+    <h3>Nội dung trao đổi chính</h3>
+    <ul>
+      <li><strong>Cấu trúc SATB:</strong> Soprano (bè nữ cao), Alto (bè nữ trầm), Tenor (bè nam cao), Bass (bè nam trầm); các bè phối hợp để tạo hợp âm cân đối.</li>
+      <li><strong>Nguyên tắc phối bè:</strong> dùng đúng âm hợp âm, chú ý âm vực và khoảng cách, tránh chéo bè/vượt bè; hạn chế quãng 5 và quãng 8 song song trong hòa thanh cổ điển.</li>
+      <li><strong>Voice Leading:</strong> kết nối nốt giữa các bè bằng chuyển động đồng hướng, nghịch hướng hoặc xiên để tạo sự liền mạch.</li>
+      <li><strong>Ứng dụng đệm hát:</strong> xác định hợp âm theo giai điệu, vận dụng công năng T–S–D, xây dựng bè trầm và chọn cách đệm phù hợp tính chất bài hát.</li>
+    </ul>
+    <h3>Ví dụ chuyên môn được thảo luận</h3>
+    <div class="example-grid">
+      <div><span class="example-label">Tiến trình hòa âm</span><strong>C – F – G – C</strong><p>Trong giọng Đô trưởng, tương ứng công năng T – S – D – T.</p></div>
+      <div><span class="example-label">Phân bổ hợp âm C</span><strong>Bass: Đô · Tenor: Sol</strong><p>Alto: Đô · Soprano: Mi. Hợp âm C gồm Đô – Mi – Sol; âm gốc được nhân đôi.</p></div>
+    </div>
+    <h3>Những nội dung đã thống nhất</h3>
+    <ol>
+      <li>Sử dụng tài liệu nghiên cứu đã tổng hợp làm cơ sở triển khai.</li>
+      <li>Trình bày rõ cấu trúc SATB, nguyên tắc phối bè và bổ sung ví dụ minh họa.</li>
+      <li>Kiểm tra tính chính xác của hợp âm, cách phân bố nốt và làm rõ ứng dụng trên bài hát cụ thể.</li>
+      <li>Mỗi thành viên hoàn thành phần việc được giao; nhóm phối hợp tổng hợp, rà soát và thống nhất báo cáo chung.</li>
+    </ol>
+    <div class="evidence">
+      <div><strong>Minh chứng cuộc họp</strong><p>Ảnh chụp màn hình Google Meet lúc 21:37 ngày 09/11/2026, hiển thị 05 thành viên tham gia.</p><a href="https://meet.google.com/njg-ndrp-bye" target="_blank" rel="noopener">Mở liên kết Google Meet</a></div>
+      <span class="evidence-mark">05<br><small>thành viên</small></span>
+    </div>
+    <p class="small">Người ghi biên bản: A King Thị Hiểu Ly – Thư ký nhóm.</p>
+  </section>
 
-<nav class="pager"><a class="btn ghost" href="bai3.html">← Bài trước</a><a class="btn ghost" href="projects.html">Danh mục Dự án</a><a class="btn" href="bai5.html">Bài tiếp theo →</a></nav>
+  <section class="card">
+    <p class="section-kicker">04 / Nghiên cứu</p>
+    <h2>Tìm kiếm và tổng hợp tài liệu</h2>
+    <p>Nhóm tham khảo học liệu âm nhạc, giáo trình lý thuyết và tài liệu chuyên ngành để hệ thống hóa kiến thức về cấu tạo, nguyên tắc phối bè và ứng dụng hòa thanh 4 bè.</p>
+    <div class="tablewrap"><table><thead><tr><th>Nguồn tham khảo</th><th>Nội dung sử dụng</th></tr></thead><tbody>
+      <tr><td><a href="https://viva.pressbooks.pub/openmusictheory/chapter/chords-in-satb-style/" target="_blank" rel="noopener">Open Music Theory</a></td><td>Cách viết hợp âm theo cấu trúc SATB.</td></tr>
+      <tr><td><a href="https://rwu.pressbooks.pub/musictheory/chapter/spacing-voicing-and-doubling-of-chord-tones-in-satb-style/" target="_blank" rel="noopener">Composing Music: From Theory to Practice</a></td><td>Sắp xếp hợp âm, nhân đôi âm và kết nối các bè.</td></tr>
+      <tr><td><a href="https://musictheory.pugetsound.edu/mt21c/VoiceLeading.html" target="_blank" rel="noopener">University of Puget Sound</a></td><td>Các nguyên tắc chuyển động giữa các bè (Voice Leading).</td></tr>
+      <tr><td><a href="https://online.berklee.edu/takenote/voice-leading-paradigms-for-harmony-in-music-composition/" target="_blank" rel="noopener">Berklee Online</a></td><td>Kết nối hợp âm và xây dựng chuyển động giai điệu giữa các bè.</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="card">
+    <p class="section-kicker">05 / Đánh giá</p>
+    <h2>Hiệu quả phối hợp và bài học kinh nghiệm</h2>
+    <p>Cuộc họp giúp các thành viên củng cố kiến thức về cấu trúc SATB, cách xây dựng hợp âm, nguyên tắc phối bè, Voice Leading và công năng T–S–D trong đệm hát. Hình thức họp trực tuyến qua Google Meet hỗ trợ trao đổi, chia sẻ tài liệu và tiết kiệm thời gian.</p>
+    <div class="two-col">
+      <div><h3>Ưu điểm</h3><ul><li>Phân công nhiệm vụ rõ ràng, phù hợp nội dung công việc.</li><li>Có sự phối hợp và hỗ trợ trong quá trình chuẩn bị.</li><li>Thảo luận tập trung, kết hợp lý thuyết với ví dụ thực tế.</li><li>Google Meet giúp các thành viên thuận tiện trao đổi.</li></ul></div>
+      <div><h3>Hạn chế</h3><ul><li>Một số thành viên chưa chủ động đóng góp ý kiến.</li><li>Kết nối trực tuyến đôi khi gặp khó khăn.</li><li>Một số nội dung chuyên môn cần được phân tích sâu hơn.</li></ul></div>
+    </div>
+    <h3>Phương hướng cải thiện</h3>
+    <p>Chủ động chuẩn bị nội dung trước cuộc họp; tăng cường trao đổi và đóng góp ý kiến; phân bổ thời gian hợp lý; bổ sung ví dụ hòa thanh trên bài hát cụ thể; kiểm tra, đối chiếu tài liệu để đảm bảo tính chính xác.</p>
+    <h3>Bài học kinh nghiệm</h3>
+    <p>Làm việc nhóm hiệu quả cần có kế hoạch cụ thể, phân công rõ trách nhiệm và tinh thần chủ động của từng thành viên. Mỗi người cần biết lắng nghe, tôn trọng ý kiến khác biệt, hoàn thành nhiệm vụ đúng tiến độ và phối hợp tổng hợp sản phẩm chung. Kỹ năng giao tiếp, phối hợp và quản lý thời gian có vai trò quan trọng đối với kết quả công việc.</p>
+    <p class="closing">Qua hoạt động này, nhóm vừa củng cố kiến thức chuyên môn về hòa thanh 4 bè, vừa rèn luyện kỹ năng giao tiếp, hợp tác và giải quyết vấn đề trong môi trường số.</p>
+  </section>
+
+  <nav class="pager" aria-label="Điều hướng bài tập"><a class="btn ghost" href="bai3.html">← Bài trước</a><a class="btn ghost" href="projects.html">Danh mục dự án</a><a class="btn" href="bai5.html">Bài tiếp theo →</a></nav>
 </main>
-<footer>
-  <div class="wrap">
-    <p>Nguyễn Hưng Nam – Mã sinh viên: 2552210033 – Lớp: K20A SPAN – Học phần: Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo</p>
-    <p class="small">Trường Đại học Sư phạm Nghệ thuật Trung ương – Khoa Giáo dục Đại cương</p>
-  </div>
-</footer>
+<footer><div class="wrap">
+  <p>Nguyễn Hưng Nam – Mã sinh viên: 2552210033 – Lớp: K20A SPAN – Học phần: Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo</p>
+  <p class="small">Trường Đại học Sư phạm Nghệ thuật Trung ương – Khoa Giáo dục Đại cương</p>
+</div></footer>
 <script src="site.js"></script>
 </body>
 </html>
